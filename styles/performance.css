@@ -1,0 +1,74 @@
+/* Additional performance optimizations */
+
+/* Optimize image loading with lazy loading */
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Improve text rendering */
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize transitions for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-transition {
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+/* Optimize focus styles for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Optimize contrast for accessibility */
+.high-contrast-text {
+  color: #000000;
+  background-color: #ffffff;
+  text-shadow: none;
+}
+
+.dark .high-contrast-text {
+  color: #ffffff;
+  background-color: #000000;
+  text-shadow: none;
+}
+
+/* Optimize loading performance */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Optimize for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
